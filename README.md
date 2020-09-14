@@ -25,15 +25,11 @@ pip install djangorestframework
 ```
 pip install django-cors-headers
 ```
-### 6 create project
-```
-django-admin startproject "project name"
-```
-### 7 create app
+### 6 create app
 ```
 py manage.py startapp "app name"
 ```
-### 8 setting in setting.py
+### 7 setting in setting.py
 
 > #### use app in project
 ```python
@@ -84,7 +80,7 @@ DATABASES = {
 }
 ```
 
-### create models at models.py
+### 8 create models at models.py
 ```python
 from django.db import models
 
@@ -94,12 +90,12 @@ class Tutorial(models.Model):
     description = models.CharField(max_length=200,blank=False, default='')
     published = models.BooleanField(default=False)
 ```
-### 10 create database in mysql
+### 9 create database in mysql
 <li> open mysql 
 <li> create database
 <li> create database name example Tutorials
 
-### 11 create migration and table
+### 10 create migration and table
 ```
 # create migration
 py manage.py makemigration "app name example tutorials"
@@ -107,7 +103,7 @@ py manage.py makemigration "app name example tutorials"
 py manage.py migrate 'app name example tutorials' 
 ```
 
-### 12 setting route and create router url
+### 11 setting route and create router url
 
 >#### create urls.py in app(tutorial)
 ```python
@@ -136,7 +132,7 @@ urlpatterns = [
 ]
 ```
 
-### 13 Create Serializer class for Data Model
+### 12 Create Serializer class for Data Model
 > #### create serializers.py in tutorials file
 ```python 
 from rest_framework import serializers 
@@ -152,7 +148,7 @@ class TutorialSerializer(serializers.ModelSerializer):
                   'description',
                   'published')
 ```
-### controller data by logic in views.py 
+### 13 controller data by logic in views.py 
 
 ```python
 from django.shortcuts import render
